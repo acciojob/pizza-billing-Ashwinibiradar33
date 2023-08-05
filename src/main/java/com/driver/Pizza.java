@@ -1,35 +1,34 @@
 package com.driver;
 
 public class Pizza {
-
-    private int CheesePrice;
-    private int PaperBagPrice;
-    private int ToppingPrice;
-    private int baseprice;
-    private int totalprice;
-    private Boolean isVeg;
     private String bill;
+    private int totalprice;
+    private final int CheesePrice;
+    private final int PaperBagPrice;
+    private final int ToppingPrice;
+
+
 private Boolean isBillGenerated;
     private Boolean isCheeseAdded;
     private Boolean isToppingsAdded;
     private Boolean isPaperBagAdded;
 
     public Pizza(Boolean isVeg){
-this.isVeg=isVeg;
         // your code goes here
-        if(isVeg==true){
-            baseprice=300;
+        int baseprice;
+        if(isVeg){
+            baseprice =300;
             ToppingPrice=70;
         }
         else{
-            baseprice=400;
+            baseprice =400;
             ToppingPrice=120;
 
         }
         CheesePrice=80;
         PaperBagPrice=20;
-        totalprice=baseprice;
-        bill="Base Price Of The Pizza"+ baseprice+"\n";
+        totalprice= baseprice;
+        bill="Base Price Of The Pizza"+ baseprice +"\n";
     }
 
     public int getPrice(){
@@ -39,7 +38,7 @@ this.isVeg=isVeg;
 
     public void addExtraCheese() {
         // your code goes here
-        if (isCheeseAdded==false) {
+        if (!isCheeseAdded) {
             isCheeseAdded = true;
             totalprice = totalprice + CheesePrice;
         }
@@ -47,9 +46,10 @@ this.isVeg=isVeg;
 
     public void addExtraToppings() {
         // your code goes here
-        if (isToppingsAdded==false) {
-            isToppingsAdded = true;
+        if (!isToppingsAdded) {
+
             totalprice = totalprice + ToppingPrice;
+            isToppingsAdded = true;
         }
     }
 
