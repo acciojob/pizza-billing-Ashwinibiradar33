@@ -2,33 +2,75 @@ package com.driver;
 
 public class Pizza {
 
-    private int price;
+    private int CheesePrice;
+    private int PaperBagPrice;
+    private int ToppingPrice;
+
+    private int baseprice;
+    private int totalprice;
     private Boolean isVeg;
     private String bill;
+private Boolean isBillGenerated;
+    private Boolean isCheeseAdded;
+    private Boolean isToppingsAdded;
+    private Boolean isPaperBagAdded;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
+        if(isVeg==true){
+            baseprice=300;
+            ToppingPrice=70;
+        }
+        else{
+            baseprice=400;
+            ToppingPrice=120;
+
+        }
+        CheesePrice=80;
+        PaperBagPrice=20;
+        totalprice=baseprice;
+        bill="Base Price Of The Pizza"+ baseprice+"\n";
     }
 
     public int getPrice(){
-        return this.price;
+
+        return this.totalprice;
     }
 
-    public void addExtraCheese(){
+    public void addExtraCheese() {
         // your code goes here
+        if (!isCheeseAdded) {
+            isCheeseAdded = true;
+            totalprice = totalprice + CheesePrice;
+            bill = bill + "Extra Cheese Added:" + CheesePrice;
+        }
     }
 
-    public void addExtraToppings(){
+    public void addExtraToppings() {
         // your code goes here
+        if (!isToppingsAdded) {
+            isToppingsAdded = true;
+            totalprice = totalprice + ToppingPrice;
+            bill = bill + "Extra Toppings Added:" + ToppingPrice;
+        }
     }
 
-    public void addTakeaway(){
-        // your code goes here
-    }
+    public void addTakeaway() {
+                // your code goes here
+                if (!isPaperBagAdded) {
+                    isPaperBagAdded = true;
+                    totalprice = totalprice + PaperBagPrice;
+                    bill = bill + "Paperbag Added:" + PaperBagPrice;
+                }
+            }
 
     public String getBill(){
         // your code goes here
+        if(!isBillGenerated){
+            isBillGenerated=true;
+            bill=bill+"Total Price:"+totalprice;
+        }
         return this.bill;
     }
 }
