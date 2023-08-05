@@ -40,7 +40,7 @@ private Boolean isBillGenerated;
 
     public void addExtraCheese() {
         // your code goes here
-        if (!isCheeseAdded) {
+        if (isCheeseAdded==false) {
             isCheeseAdded = true;
             totalprice = totalprice + CheesePrice;
             bill = bill + "Extra Cheese Added:" + CheesePrice;
@@ -49,7 +49,7 @@ private Boolean isBillGenerated;
 
     public void addExtraToppings() {
         // your code goes here
-        if (!isToppingsAdded) {
+        if (isToppingsAdded==false) {
             isToppingsAdded = true;
             totalprice = totalprice + ToppingPrice;
             bill = bill + "Extra Toppings Added:" + ToppingPrice;
