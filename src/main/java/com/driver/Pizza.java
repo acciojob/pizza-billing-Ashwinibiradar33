@@ -7,8 +7,7 @@ public class Pizza {
     private final int PaperBagPrice;
     private final int ToppingPrice;
 
-
-private Boolean isBillGenerated;
+    private Boolean isBillGenerated;
     private Boolean isCheeseAdded;
     private Boolean isToppingsAdded;
     private Boolean isPaperBagAdded;
