@@ -16,7 +16,7 @@ private Boolean isBillGenerated;
     private Boolean isPaperBagAdded;
 
     public Pizza(Boolean isVeg){
-        this.isVeg = isVeg;
+
         // your code goes here
         if(isVeg==true){
             baseprice=300;
@@ -43,7 +43,7 @@ private Boolean isBillGenerated;
         if (isCheeseAdded==false) {
             isCheeseAdded = true;
             totalprice = totalprice + CheesePrice;
-            bill = bill + "Extra Cheese Added:" + CheesePrice;
+
         }
     }
 
@@ -52,7 +52,7 @@ private Boolean isBillGenerated;
         if (isToppingsAdded==false) {
             isToppingsAdded = true;
             totalprice = totalprice + ToppingPrice;
-            bill = bill + "Extra Toppings Added:" + ToppingPrice;
+
         }
     }
 
@@ -61,7 +61,7 @@ private Boolean isBillGenerated;
                 if (!isPaperBagAdded) {
                     isPaperBagAdded = true;
                     totalprice = totalprice + PaperBagPrice;
-                    bill = bill + "Paperbag Added:" + PaperBagPrice;
+
                 }
             }
 
@@ -69,7 +69,13 @@ private Boolean isBillGenerated;
         // your code goes here
         if(!isBillGenerated){
             isBillGenerated=true;
-            bill=bill+"Total Price:"+totalprice;
+            if (isCheeseAdded)
+                bill = bill + "Extra Cheese Added:" + CheesePrice+"\n";
+            if (isToppingsAdded)
+                bill = bill + "Extra Toppings Added:" + ToppingPrice+"\n";
+            if (isPaperBagAdded)
+                bill = bill + "Paperbag Added::" + PaperBagPrice+"\n";
+            bill=bill+"Total Price:"+totalprice+"\n";
         }
         return this.bill;
     }
