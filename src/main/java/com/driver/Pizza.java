@@ -5,7 +5,6 @@ public class Pizza {
     private int CheesePrice;
     private int PaperBagPrice;
     private int ToppingPrice;
-
     private int baseprice;
     private int totalprice;
     private Boolean isVeg;
@@ -16,7 +15,7 @@ private Boolean isBillGenerated;
     private Boolean isPaperBagAdded;
 
     public Pizza(Boolean isVeg){
-
+this.isVeg=isVeg;
         // your code goes here
         if(isVeg==true){
             baseprice=300;
@@ -43,7 +42,6 @@ private Boolean isBillGenerated;
         if (isCheeseAdded==false) {
             isCheeseAdded = true;
             totalprice = totalprice + CheesePrice;
-
         }
     }
 
@@ -52,7 +50,6 @@ private Boolean isBillGenerated;
         if (isToppingsAdded==false) {
             isToppingsAdded = true;
             totalprice = totalprice + ToppingPrice;
-
         }
     }
 
@@ -61,7 +58,6 @@ private Boolean isBillGenerated;
                 if (!isPaperBagAdded) {
                     isPaperBagAdded = true;
                     totalprice = totalprice + PaperBagPrice;
-
                 }
             }
 
